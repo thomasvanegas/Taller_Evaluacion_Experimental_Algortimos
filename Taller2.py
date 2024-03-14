@@ -3,4 +3,4 @@
 """
 
 if __name__ == "__main__":
-    print(" --- Bienvenido --- \n")
+    print(" --- Bienvenido al Taller Experimental sobre Análisis de Algoritmos--- \n")
