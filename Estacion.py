@@ -1,15 +1,26 @@
 # Importación de Paquetes y Clases
-from Punto2DCartesiano import Puntot2DCartesiano
+from Punto2DCartesiano import Punto2DCartesiano
 
 
 # Definicion del ADT Estacion
-class Estacion:
+class Estacion(Punto2DCartesiano):
+    
+    # Variable contadora de ID's de las torres
+    _contador_id = 1
 
     """
         Contructor: Clase Estacion
     """
-    def __init__(self, componente_x:int, componente_y:int, nombre_torre: str):
-        self._id = 0
-        self._nombre = nombre
-        self._componente_x = componente_x
-        self._componente_y = componente_y
+    def __init__(self, x: float, y: float):
+        super().__init__(x = x, y = y)
+        self._id = self._contador_id
+
+        # Incremento de la variable ID
+        Estacion._contador_id += 1
+
+    def getId(self):
+        return self._id
+
+    # Sobreescribiendo la función print()
+    def __str__(self):
+        return f'Soy la estación con ID: {self._id}, Poseo la Coordenada: ({self.getX()},{self.getY()})'

@@ -1,7 +1,7 @@
 # Importacion de paquetes, clases y bibliotecas
 import math
 
-class Punto2DCartesiano(Point2D):
+class Punto2DCartesiano():
     """
         Clase que representa un punto con dos componentes (X,Y) en el plano XY o plano Cartesiano
     """
@@ -47,5 +47,4 @@ class Punto2DCartesiano(Point2D):
         """
             Calcular la distacia a otro punto en el plano XY
         """
-        if isinstance(puntoXY, Punto2DCartesiano):
-            return math.sqrt( ((self.getX() - puntoXY.getX())**2) + ((self.getY() - puntoXY.getY())**2) )
+        return math.sqrt( ((self.getX() - puntoXY.getX())**2) + ((self.getY() - puntoXY.getY())**2) )
