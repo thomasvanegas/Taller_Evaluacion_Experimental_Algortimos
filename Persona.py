@@ -22,8 +22,12 @@ class Persona(Punto2DCartesiano):
     def getId(self):
         return self._id
 
-        def setEstacion(self, estacion: "Estacion"):
-            self._estacion_asociada = estacion.getId()
+    def setEstacion(self, estacion: "Estacion"):
+        if isinstance(estacion, Estacion):
+            self._estacion_asociada = estacion
+
+    def getEstacion(self):
+        return self._estacion_asociada
 
     # Sobreescribiendo la función print()
     def __str__(self):

@@ -52,5 +52,5 @@ if __name__ == "__main__":
 
     # Imprimir la informacion de todas las estaciones
     print("\n---  Información de la colección de Estaciones --- \n")
-    for i, estacion in enumerate(estaciones):
+    for estacion in estaciones:
         print(estacion)
