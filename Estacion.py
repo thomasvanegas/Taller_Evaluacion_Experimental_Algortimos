@@ -1,5 +1,9 @@
+# Importación de Paquetes y Clases
+from Punto2DCartesiano import Puntot2DCartesiano
+
+
 # Definicion del ADT Estacion
-class Persona:
+class Estacion:
 
     """
         Contructor: Clase Estacion

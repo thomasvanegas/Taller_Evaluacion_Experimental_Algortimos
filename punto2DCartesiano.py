@@ -1,37 +1,51 @@
+# Importacion de paquetes, clases y bibliotecas
 import math
-from point2D import Point2D
 
-class Point2DCartesian(Point2D):
-    """Class representing points in the plane
+class Punto2DCartesiano(Point2D):
+    """
+        Clase que representa un punto con dos componentes (X,Y) en el plano XY o plano Cartesiano
     """
 
     def __init__(self, x:float, y:float):
-        """Constructs a Point2D instance from the x,y coordinates
+        """
+            Contruye e inicializa un punto en el plano XY, con dos componentes, (X,Y)
         """
         self._x = x
         self._y = y
         
     def __str__(self):
-        """Returns a String representation of the point
         """
-        return "("+str(self._x)+","+str(self._y)+")"
+            Retorna una cadena de caracteres como representación del punto (X,Y)
+        """
+        return f'Punto en el plano XY, con coordenadas: ({str(self.getX())},{str(self.getY())})'
     
     def __abs__(self):
-        """Returns the distance to the origin (magnitude)
         """
-        return math.sqrt( self._x**2 + self._y**2 )
+            Retorna la distancia desde el origen hacia el punto
+        """
+        return math.sqrt( (self._x**2) + (self._y**2) )
     
-    def angle(self) -> float:
-        """Returns the angle to the x axis
+    def getAngle(self) -> float:
+        """
+            Retorna el ángulo con respecto al eje X del punto
         """
         return math.atan2( self._y, self._x )
     
     def getX(self) -> float:
-        """Returns the x component
+        """
+            Retorna el valor de la componente X, del punto (X,Y)
         """
         return self._x
 
     def getY(self) -> float:
-        """Returns the y component
+        """
+            Retorna el valor de la componente Y, del punto (X,Y)
         """
         return self._y
+
+    def getDistancia(self, puntoXY:'Point2D') -> float:
+        """
+            Calcular la distacia a otro punto en el plano XY
+        """
+        if isinstance(puntoXY, Punto2DCartesiano):
+            return math.sqrt( ((self.getX() - puntoXY.getX())**2) + ((self.getY() - puntoXY.getY())**2) )
